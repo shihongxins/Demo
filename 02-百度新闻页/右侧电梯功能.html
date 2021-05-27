@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>右侧电梯功能</title>
+  <style>
+    /* 通用样式 */
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .clearfix,.clearfix:after {
+      content: '';
+      display: block;
+      float: none;
+      clear: both;
+      zoom: 1;
+    }
+    /* 设置让 body 滚动 */
+    body {
+      height: 200vh;
+    }
+
+    /* 右侧电梯按钮 */
+    ul.sidebar {
+      list-style: none;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      margin-left: 502px;
+      width: 52px;
+    }
+    /* 默认按钮背景图 */
+    ul.sidebar li.item {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      margin-top: 3px;
+      background-image: url("./img/sidebar-icon-merged_b8bc211.png");
+      cursor: pointer;
+    }
+    ul.sidebar li.item.roumer {
+      height: 92px;
+      background-image: url("./img/sidebar-roumer_033b02b.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    ul.sidebar li.item.report {
+      height: 92px;
+      background-image: url("./img/sidebar-report_3c9a61f.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    ul.sidebar li.item.qr-code {
+      background-position: 0px 0px;
+    }
+    ul.sidebar li.item.favorite {
+      background-position: 0px -51px;
+    }
+    ul.sidebar li.item.search {
+      background-position: 0px -204px;
+    }
+    ul.sidebar li.item.feedback {
+      background-position: 0px -255px;
+    }
+    ul.sidebar li.item.goTop {
+      background-position: 0px 99px;
+      display: none;
+    }
+    /* hover 时内容显示及滑动动画 */
+    ul.sidebar li.btn-rotate {
+      overflow: hidden;
+    }
+    ul.sidebar li.btn-rotate a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      font: 12px/48px "Microsoft YaHei";
+      border-radius: 3px;
+      text-align: center;
+      color: white;
+      background: #184481;
+      transform-origin: -50% 50%;
+      transform: rotate3d(0,0,1,90deg);
+      transition: transform .5s ease-in;
+    }
+    ul.sidebar li.btn-rotate.roumer a,
+    ul.sidebar li.btn-rotate.report a {
+      line-height: 92px;
+      transform-origin: -100% 50%;
+    }
+    ul.sidebar li.btn-rotate.favorite a,
+    ul.sidebar li.btn-rotate.feedback a {
+      padding: 10px;
+      width: 28px;
+      height: 28px;
+      line-height: 14px;
+    }
+    ul.sidebar li.btn-rotate:hover a {
+      transform: rotate3d(0,0,1,0deg);
+    }
+    /* 二维码功能的详细内容 */
+    ul.sidebar li.btn-rotate.qr-code ~ .qr-code-container {
+      position: absolute;
+      top: 134px;
+      right: 120%;
+      z-index: 6;
+      display: none;
+      padding: 20px;
+      width: 330px;
+      height: 130px;
+      border-radius: 3px;
+      color: #333;
+      background: #eff1f4;
+    }
+    ul.sidebar li.btn-rotate.qr-code ~ .qr-code-container .qr-code-img {
+      float: left;
+    }
+    ul.sidebar li.btn-rotate.qr-code ~ .qr-code-container img {
+      width: 130px;
+    }
+    ul.sidebar li.btn-rotate.qr-code ~ .qr-code-container .qr-code-info {
+      float: right;
+    }
+    ul.sidebar li.btn-rotate.qr-code ~ .qr-code-container .qr-code-info .title {
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 15px;
+      margin-top: 10px;
+    }
+    ul.sidebar li.btn-rotate.qr-code ~ .qr-code-container ul {
+      list-style: disc;
+      list-style-position: inside;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #666;
+    }
+    ul.sidebar li.btn-rotate.qr-code:hover ~ .qr-code-container {
+      display: block;
+    }
+
+    /* 收藏功能的详细内容 */
+    ul.sidebar li.btn-rotate.favorite ~ .favorite-description {
+      position: absolute;
+      top: 238px;
+      right: 120%;
+      z-index: 5;
+      display: block;
+      padding: 12px 28px;
+      width: 210px;
+      line-height: 20px;
+      font-size: 14px;
+      border-radius: 3px;
+      color: white;
+      background-color: rgba(0, 0, 0, .8);
+      opacity: 0;
+      transition: opacity .3s ease-in .5s;
+    }
+    /* 小三角 */
+    ul.sidebar li.btn-rotate.favorite ~ .favorite-description::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -12px;
+      display: block;
+      width: 0;
+      height: 0;
+      margin-top: -6px;
+      border: 6px solid transparent;
+      border-left-color: rgba(0, 0, 0, .8);
+      opacity: .8;
+    }
+    /* 滑动时调整透明度显示 */
+    ul.sidebar li.btn-rotate.favorite:hover ~ .favorite-description {
+      opacity: .8;
+    }
+
+    /* 搜索输入框 */
+    ul.sidebar li.btn-rotate.search ~ .search-container {
+      position: absolute;
+      top: 295px;
+      right: 105%;
+      z-index: 5;
+      display: block;
+      height: 48px;
+      width: 0;
+      line-height: 48px;
+      border-radius: 3px;
+      background: #394151;
+      overflow: hidden;
+      transition: width .5s ease-in;
+    }
+    ul.sidebar li.btn-rotate.search ~ .search-container.show {
+      width: 300px;
+    }
+    ul.sidebar li.btn-rotate.search ~ .search-container a.btn-close-search {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 22px;
+      background-image: url("./img/icon-search-hide_5b8fa4e.png");
+      background-position: 0 -57px;
+    }
+    ul.sidebar li.btn-rotate.search ~ .search-container a.btn-close-search:hover {
+      background-position: 0 0;
+    }
+    ul.sidebar li.btn-rotate.search ~ .search-container input {
+      outline: none;
+      margin: 0 5px 0 25px;
+      border: none;
+      padding: 2px 6px;
+      width: 260px;
+      height: 28px;
+      line-height: 28px;
+      font-size: 12px;
+      vertical-align: middle;
+      color: #fff;
+      background: #000;
+    }
+    
+    /* 回到顶部功能按钮 */
+    ul.sidebar li.item.goTop a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      font: 12px/48px "Microsoft YaHei";
+      border-radius: 3px;
+      text-align: center;
+    }
+    /* 滑动时修改背景图 */
+    ul.sidebar li.item.goTop:hover {
+      background-position: 0px 48px;
+    }
+  </style>
+</head>
+<body>
+  <ul class="sidebar">
+    <li class="item btn-rotate roumer" data-text="辟谣">
+      <a href="javascript:void(0);">辟谣</a>
+    </li>
+    <li class="item btn-rotate report" data-text="举报">
+      <a href="javascript:void(0);">举报</a>
+    </li>
+    <li class="item btn-rotate qr-code" data-text="二维码">
+      <a href="javascript:void(0);">二维码</a>
+    </li>
+    <li class="item btn-rotate favorite" data-text="收藏本站">
+      <a href="javascript:void(0);">收藏本站</a>
+    </li>
+    <li class="item btn-rotate search" data-text="搜索">
+      <a href="javascript:void(0);" id="btn-search">搜索</a>
+    </li>
+    <li class="item btn-rotate feedback" data-text="用户反馈">
+      <a href="javascript:void(0);">用户反馈</a>
+    </li>
+    <li class="item goTop">
+      <a href="javascript: void(0)" id="btn-goTop"></a>
+    </li>
+    <li class="qr-code-container clearfix">
+      <div class="qr-code-img">
+        <img src="./img/qr-code_9fa03e0.png" alt="qr-code">
+      </div>
+      <div class="qr-code-info">
+        <h3 class="title">百度新闻客户端</h3>
+        <ul class="description">
+          <li>扫描二维码下载</li>
+          <li>随时随地收看更多新闻</li>
+        </ul>
+      </div>
+    </li>
+    <li class="favorite-description">
+      <kbd>Ctrl</kbd> + <kbd>D</kbd> 把百度新闻放入收藏夹 全面了解实时资讯，方便快捷！
+    </li>
+    <li class="search-container">
+      <a href="javascript:void(0)" class="btn-close-search"></a>
+      <input type="search" placeholder="请输入搜索词" autocomplete="off">
+    </li>
+  </ul>
+  <script>
+    //搜索按钮事件
+    document.querySelector('#btn-search').addEventListener('click', function () {
+      var searchContainer = document.querySelector('.search-container');
+      var searchInput = searchContainer.querySelector('input');
+      searchInput.value = searchInput.value.trim();
+      if (searchContainer.className.indexOf('show') < 0) {
+        searchContainer.className += ' show';
+      } else if ( searchInput.value.length ) {
+        alert(searchInput.value);
+      } else {
+        searchContainer.className = 'search-container';
+      }
+    })
+    document.querySelector('.btn-close-search').onclick = function () {
+      this.parentNode.className = 'search-container';
+    }
+
+    // 滚动监听
+    window.addEventListener('scroll', function () {
+      var top = document.documentElement.scrollTop || window.pageYOffset;
+      var goTop = document.querySelector('.goTop');
+      if (top > 300) {
+        goTop.style.display = 'block';
+      } else {
+        goTop.style.display = '';
+      }
+    })
+    document.querySelector('#btn-goTop').onclick = function () {
+      try {
+        window.scrollTo({left:0,top:0,behavior:'smooth'})
+      } catch (e) {
+        window.scrollTo(0,0);
+      }
+    }
+  </script>
+</body>
+</html>

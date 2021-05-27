@@ -1,0 +1,104 @@
+/* ============================== 媒体查询，动态调整部分样式，以适配多分辨率设备 ========================= */
+/* 手机屏幕 */
+@media screen and (max-width: 767px) {
+  :root {
+    --layout_width: 540px;
+  }
+  aside {
+    display: none;
+  }
+  .layout {
+    width: 100%;
+  }
+  header .style__mode,header a.nav__btn {
+    padding: 0;
+  }
+  header nav {
+    display: none;
+    float: left;
+  }
+  header .logo:hover ~ nav {
+    display: block;
+  }
+  header nav > .nav__item {
+    float: none;
+  }
+  .container main {
+    margin: auto;
+  }
+  main .carousel .carousel__img__wrapper {
+    float: left;
+    width: auto;
+    height: 150px;
+  }
+  main .carousel .carousel__img {
+    width: auto;
+    height: 100%;
+  }
+}
+/* 普通平板 */
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  :root {
+    --layout_width: 720px;
+  }
+  header .style__mode,header  a.nav__btn {
+    padding: 0;
+  }
+  nav .search .search__input,
+  nav .search .search__input:focus {
+    width: 140px;
+  }
+  nav .search .search__recommend {
+    width: 160px;
+    box-sizing: border-box;
+  }
+  .container aside {
+    width: 150px;
+  }
+  .container aside .hot__panel__link {
+    padding-bottom: 30px;
+  }
+  .container aside .download {
+    padding: 5px;
+    text-align: center;
+  }
+  .download .qrcode--min {
+    float: none;
+    width: 100%;
+    height: auto;
+  }
+  .download h4,.download p {
+    font-size: 12px;
+    margin: 0;
+  }
+  aside .recommend .recommend__user {
+    margin-top: 10px;
+  }
+  aside .recommend__user .user__avatar {
+    width: 30px;
+    height: 30px;
+  }
+  aside .recommend__user .user__name {
+    margin: 0 35px;
+    font-size: 12px;
+  }
+  aside .recommend__user .user__status {
+    margin: 15px 5px 0;
+  }
+  .container main {
+    margin: 0 160px 0 0;
+  }
+  main .carousel .carousel__img__wrapper {
+    width: 530px;
+    height: auto;
+  }
+  main .carousel .carousel__img {
+    height: auto;
+  }
+}
+/* 1080p 平板 */
+@media screen and (min-width: 992px) {
+  :root {
+    --layout_width: 960px;
+  }
+}

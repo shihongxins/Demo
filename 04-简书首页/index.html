@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" contnet="shihongxins">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="仿 PC 端简书首页">
+  <title>仿 PC 端简书首页</title>
+  <!-- 引入 Normalize.css -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" rel="stylesheet" type="text/css" />
+  <!-- 引入 iconfont -->
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_2564505_qz59cfrsbja.css" type="text/css" />
+  <!-- 引入样式加载文件 index.css ❗❗❗ 此样式文件为样式入口文件，通过它引入样式 ❗❗❗ -->
+  <link rel="stylesheet" href="/css/index.css" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <a href="/" class="logo">
+      <img src="https://shihongxins.github.io/data-mock/jianshu/images/logo.png" alt="简书" class="logo__img">
+    </a>
+    <a class="btn--write">
+      <i class="iconfont icon-pen"></i>写文章
+    </a>
+    <div class="nav__item user">
+      <a href="https://github.com/shihongxins" class="nav__btn" target="_blank">
+        <img src="https://shihongxins.github.io/data-mock/jianshu/images/user-img01.png" alt="头像" class="user__avatar">
+        <i class="iconfont icon-down"></i>
+      </a>
+      <ul class="nav__item__child">
+        <li class="nav__item">
+          <a href="https://github.com/shihongxins" class="nav__btn" target="_blank">
+            <i class="iconfont icon-user"></i>我的主页
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__btn">
+            <i class="iconfont icon-collection"></i>收藏的文章
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__btn">
+            <i class="iconfont icon-heart"></i>喜欢的文章
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__btn">
+            <i class="iconfont icon-log-out"></i>退出
+          </a>
+        </li>
+      </ul>
+    </div>
+    <a href="" class="style__mode"><i class="iconfont icon-font"></i></a>
+    <nav class="layout clearfix">
+      <div class="nav__item active">
+        <a href="" class="nav__btn">
+          <i class="iconfont icon-safari"></i> 发现
+        </a>
+      </div>
+      <div class="nav__item">
+        <a href="" class="nav__btn">
+          <i class="iconfont icon-book"></i> 订阅
+        </a>
+      </div>
+      <div class="nav__item">
+        <a href="" class="nav__btn">
+          <i class="iconfont icon-bell"></i> 消息
+        </a>
+        <span class="badge">99+</span>
+        <ul class="nav__item__child">
+          <li class="nav__item">
+            <a href="" class="nav__btn">
+              <i class="iconfont icon-comment"></i>评论
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__btn">
+              <i class="iconfont icon-message"></i>简信
+            </a>
+            <span class="badge">99+</span>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__btn">
+              <i class="iconfont icon-user-add"></i>关注
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav__item">
+        <div class="search">
+          <input type="search" placeholder="搜索" class="search__input">
+          <i class="iconfont icon-search"></i>
+          <div class="search__recommend triangle--width">
+            <h4 class="recommend__title">
+              热门搜索
+              <a href="" class="recommend__refresh">
+                <i class="iconfont icon-reload"></i>换一换
+              </a>
+            </h4>
+            <div class="search__recommend__items">
+              <a href="" class="search__recommend__label">前端</a>
+              <a href="" class="search__recommend__label">Javascript</a>
+              <a href="" class="search__recommend__label">小程序</a>
+              <a href="" class="search__recommend__label">故事会</a>
+              <a href="" class="search__recommend__label">大数据</a>
+              <a href="" class="search__recommend__label">每周精选</a>
+              <a href="" class="search__recommend__label">Vue</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout container clearfix">
+    <aside>
+      <ul class="hot__panels">
+        <li class="hot__panel">
+          <a href="" class="hot__panel__link">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/panel01.png" alt="7日热门" class="hot__panel__img">
+          </a>
+        </li>
+        <li class="hot__panel">
+          <a href="" class="hot__panel__link">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/panel02.png" alt="30日热门" class="hot__panel__img">
+          </a>
+        </li>
+        <li class="hot__panel">
+          <a href="" class="hot__panel__link">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/panel03.png" alt="优选连载" class="hot__panel__img">
+          </a>
+        </li>
+        <li class="hot__panel">
+          <a href="" class="hot__panel__link">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/panel04.png" alt="简书版权" class="hot__panel__img">
+          </a>
+        </li>
+        <li class="hot__panel">
+          <a href="" class="hot__panel__link">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/panel05.png" alt="简书大学堂" class="hot__panel__img">
+          </a>
+        </li>
+      </ul>
+      <a href="" class="download clearfix">
+        <img src="https://shihongxins.github.io/data-mock/jianshu/images/QRCODE.png" alt="qrcode" class="qrcode--min">
+        <h4>下载简书手机 App</h4>
+        <p>随时随地发现和创作内容</p>
+        <div class="popup triangle--width">
+          <img src="https://shihongxins.github.io/data-mock/jianshu/images/QRCODE.png" alt="qrcode" class="qrcode">
+        </div>
+      </a>
+      <div class="recommend">
+        <h4 class="recommend__title">
+          推荐用户
+          <a href="" class="recommend__refresh">
+            <i class="iconfont icon-reload"></i>换一批
+          </a>
+        </h4>
+        <ul class="recommend__list">
+          <li class="recommend__user">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/user-img01.png" alt="用户头像" class="user__avatar">
+            <a href="https://github.com/shihongxins" class="follow__btn">+关注</a>
+            <a href="https://github.com/shihongxins" class="user__name">shihongxins</a>
+            <p class="user__status">写了391.7k字 · 6.4k喜欢</p>
+          </li>
+          <li class="recommend__user">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/user-img02.jpg" alt="用户头像" class="user__avatar">
+            <a href="" class="follow__btn">+关注</a>
+            <a href="" class="user__name">细说前端</a>
+            <p class="user__status">写了2005.3k字 · 34.1k喜欢</p>
+          </li>
+          <li class="recommend__user">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/user-img03.png" alt="用户头像" class="user__avatar">
+            <a href="" class="follow__btn">+关注</a>
+            <a href="" class="user__name">梅诗音</a>
+            <p class="user__status">写了456.5k字 · 109.3k喜欢</p>
+          </li>
+        </ul>
+        <a href="" class="more">查看全部</a>
+      </div>
+    </aside>
+    <main>
+      <div class="carousel">
+        <ul class="carousel__panels clearfix">
+          <li class="carousel__img__wrapper">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/carousel01.jpg" alt="" class="carousel__img">
+          </li>
+          <li class="carousel__img__wrapper">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/carousel02.jpg" alt="" class="carousel__img">
+          </li>
+          <li class="carousel__img__wrapper">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/carousel03.jpg" alt="" class="carousel__img">
+          </li>
+          <li class="carousel__img__wrapper">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/carousel04.jpg" alt="" class="carousel__img">
+          </li>
+        </ul>
+        <a href="" class="carousel__btn carousel__btn--left">
+          <i class="iconfont icon-arrow"></i>
+        </a>
+        <a href="" class="carousel__btn carousel__btn--right">
+          <i class="iconfont icon-arrow"></i>
+        </a>
+        <ul class="carousel__pagination">
+          <li class="active"></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="category clearfix">
+        <a href="" class="category__label">
+          <img src="https://shihongxins.github.io/data-mock/jianshu/images/label01.jpg" alt="简书电影">简书电影
+        </a>
+        <a href="" class="category__label">
+          <img src="https://shihongxins.github.io/data-mock/jianshu/images/label02.jpg" alt="故事">故事
+        </a>
+        <a href="" class="category__label">
+          <img src="https://shihongxins.github.io/data-mock/jianshu/images/label03.jpg" alt="手绘">手绘
+        </a>
+        <a href="" class="category__label">
+          <img src="https://shihongxins.github.io/data-mock/jianshu/images/label04.jpg" alt="历史">历史
+        </a>
+        <a href="" class="category__label">
+          <img src="https://shihongxins.github.io/data-mock/jianshu/images/label05.jpg" alt="人文社科">人文社科
+        </a>
+        <a href="" class="category__label">
+          <img src="https://shihongxins.github.io/data-mock/jianshu/images/label06.jpg" alt="摄影">摄影
+        </a>
+        <a href="" class="category__label">
+          <img src="https://shihongxins.github.io/data-mock/jianshu/images/label07.jpg" alt="自然科普">自然科普
+        </a>
+        <a href="" class="category__more">更多热门专题></a>
+      </div>
+      <article>
+        <section class="clearfix">
+          <a href="" class="section__cover">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/article-img03.jpg" alt="">
+          </a>
+          <h3 class="section__title"><a href="">仿 PC 端简书首页布局——总结</a></h3>
+          <p class="section__content">
+            1. 不再困惑也不再迷茫，头脑中的构想在现实生活中并驾齐驱地向前推进，虽然困难重重但能够想方设法加以克服。前景广阔而美好，只是有一丝淡淡的凄凉，也…
+          </p>
+          <div class="section__info">
+            <a href="" class="author">shihongxins</a>
+            <a href="" class="comment">
+              <i class="iconfont icon-comment"></i>36
+            </a>
+            <a href="" class="like">
+              <i class="iconfont icon-heart"></i>20
+            </a>
+            <a href="" class="coin">
+              <i class="iconfont icon-yen"></i>13
+            </a>
+          </div>
+        </section>
+        <section class="clearfix">
+          <a href="" class="section__cover">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/article-img01.jpg" alt="">
+          </a>
+          <h3 class="section__title"><a href="">评“超时空同居”浅议爱情电影和奇幻元素的嫁接</a></h3>
+          <p class="section__content">
+            这部电影充分照顾到了八零后的情怀，九零后的笑点，零零后嘛，那就是奇幻爱情吧。奇幻爱情喜剧，三种元素都有，但哪种都不出彩，相对来说喜剧元素稍微强一…
+          </p>
+          <div class="section__info">
+            <a href="" class="author">苇筱</a>
+            <a href="" class="comment">
+              <i class="iconfont icon-comment"></i>456
+            </a>
+            <a href="" class="like">
+              <i class="iconfont icon-heart"></i>232
+            </a>
+            <a href="" class="coin">
+              <i class="iconfont icon-yen"></i>123
+            </a>
+          </div>
+        </section>
+        <section class="clearfix">
+          <a href="" class="section__cover">
+            <img src="https://shihongxins.github.io/data-mock/jianshu/images/article-img02.jpg" alt="">
+          </a>
+          <h3 class="section__title"><a href="">复杂的人心</a></h3>
+          <p class="section__content">
+            好久不见的一个朋友给我来了个电话，聊天内容从问候谈到工作，谈到孩子，东拉西扯了十几分钟，我忍不住问：“有什么事情吗？”人家一愣，说就是感觉好久没...
+          </p>
+          <div class="section__info">
+            <a href="" class="author">唐小暖</a>
+            <a href="" class="comment">
+              <i class="iconfont icon-comment"></i>75
+            </a>
+            <a href="" class="like">
+              <i class="iconfont icon-heart"></i>21
+            </a>
+            <a href="" class="coin">
+              <i class="iconfont icon-yen"></i>10
+            </a>
+          </div>
+        </section>
+        <a href="" class="load-more">加载更多</a>
+      </article>
+    </main>
+  </div>
+  <ul class="side__tool">
+    <li class="backtop__container">
+      <a href="" class="backtop__wrapper">
+        <i class="iconfont icon-arrow"></i>
+      </a>
+      <span class="tips triangle--border">回到顶部</span>
+    </li>
+  </ul>
+  <footer>
+    <a href="" class="about" target="_blank">关于简书</a>
+    <em>·</em>
+    <a href="mailto://shihongxins@163.com" class="contact">联系我们</a>
+    <p class="copyright">
+      ©2012-2021 上海佰集信息科技有限公司 / 简书 / 沪ICP备11018329号-5 / 实名认证 沪公网安备31010402002252号 /
+    </p>
+  </footer>
+</body>
+
+</html>

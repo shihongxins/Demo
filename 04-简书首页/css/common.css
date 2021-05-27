@@ -1,0 +1,68 @@
+/* ================= 公用样式 common.css ================ */
+/* 布局容器 */
+.layout {
+  margin: 0 auto;
+  padding: 0 15px;
+  width: var(--layout_width);
+}
+/* 清除浮动 */
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  float: none;
+  clear: both;
+}
+/* 消息数量徽章 */
+span.badge {
+  position: absolute; /* 默认靠右对齐，垂直居中，具体看情况调整 */
+  top: 50%;
+  right: 1em;
+  margin-top: -9px;
+  border-radius: 8px;
+  padding: 2px 4px;
+  line-height: 1;
+  font-size: 14px;
+  color: #fff;
+  background: var(--color_main);
+}
+/* 小三角 两种小三角实现方式 */
+.triangle--border:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #ddd transparent transparent transparent;
+}
+.triangle--width:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  box-shadow: -2px -2px 6px -2px rgba(0,0,0,.1);
+  transform: rotate(45deg);
+}
+/* 推荐标题与换一换 */
+.recommend__title {
+  margin: 0;
+  line-height: 1;
+  font-weight: normal;
+  color: #666;
+}
+.recommend__title .recommend__refresh {
+  float: right;
+  font-size: 12px;
+  text-decoration: none;
+}
+.recommend__title .icon-reload {
+  font-size: 12px;
+}

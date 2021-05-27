@@ -1,0 +1,117 @@
+/* ================ 中部侧边栏样式 aside.css =========== */
+.container {
+  margin-top: 70px;
+}
+/* 侧边栏 */
+.container aside {
+  float: right;
+  width: 300px;
+}
+/* 侧边栏中的热门板块 */
+.container aside .hot__panels {
+  line-height: 1;
+}
+.container aside .hot__panel__link {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 55px; /* 慢速加载图片占位防抖动技巧 */
+}
+.container aside .hot__panel__img {
+  display: block;
+  width: 100%;
+}
+/* 侧边栏中的下载二维码 */
+.container aside .download {
+  display: block;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  line-height: 1.8;
+  text-decoration: none;
+  position: relative; /* 给大图二维码作定位参考 */
+}
+.download .qrcode--min {
+  float: left;
+  margin: 0;
+  width: 56px;
+  height: 56px;
+}
+.download h4 {
+  margin: 0 0 0 66px;
+  font-weight: normal;
+}
+.download p {
+  margin: 0 0 0 66px;
+  font: normal 12px/1.8 inheirit;
+  color: #666;
+}
+.download .popup {
+  display: none; /* 默认隐藏 */
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  margin-left: -90px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  width: 180px;
+  height: 180px;
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.3);
+  background: #fff;
+}
+.download .popup.triangle--width:after {
+  top: auto;
+  bottom: -7px;
+  left: calc(50% - 7px);
+  width: 15px;
+  height: 15px;
+  transform: rotate(225deg);
+}
+.download .popup .qrcode {
+  width: 100%;
+}
+.download:hover .popup {
+  display: block; /* 划过时显示 */
+}
+/* 侧边栏中的推荐用户 */
+.container aside .recommend {
+  margin-top: 30px;
+}
+aside .recommend .recommend__user {
+  margin-top: 30px;
+  font-size: 12px;
+}
+aside .recommend .recommend__user a {
+  text-decoration: none;
+}
+aside .recommend__user .user__avatar {
+  float: left;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+aside .recommend__user .user__name {
+  display: block;
+  margin:  0 60px;
+  font-size: 14px;
+}
+aside .recommend__user .follow__btn {
+  float: right;
+  color: #42c02e;
+}
+aside .recommend__user .user__status {
+  margin: 5px 60px;
+  color: #999;
+}
+aside .recommend .more {
+  display: block;
+  margin-top: 30px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  line-height: 30px;
+  text-align: center;
+  color: #666;
+  background: #eee;
+}

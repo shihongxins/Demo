@@ -1,0 +1,155 @@
+/* ================ 中部主要样式 main.css =========== */
+.container {
+  margin-top: 70px;
+}
+.container main {
+  margin: 0 330px 0 0; /* 与 aside 侧边栏隔开，并触发 BFC */
+  overflow: hidden;
+}
+/* 轮播图部分 */
+main .carousel {
+  position: relative; /* 轮播图各个组件的定位 */
+}
+main .carousel .carousel__panels {
+  width: max-content;
+}
+main .carousel .carousel__img__wrapper {
+  float: left;
+  width: 600px;
+  height: 236px;
+}
+main .carousel .carousel__img {
+  width: 100%;
+  height: 100%;
+}
+main .carousel .carousel__btn {
+  display: none; /* 默认隐藏 */
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  border-radius: 4px 4px 0 0;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  background: rgba(0,0,0,.4)
+}
+main .carousel .carousel__btn .iconfont {
+  font-size: 30px;
+  color: #fff;
+}
+main .carousel .carousel__btn--left {
+  left: 0;
+  transform: rotate(90deg);
+}
+main .carousel .carousel__btn--right {
+  right: 0;
+  transform: rotate(-90deg);
+}
+main .carousel .carousel__pagination {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+  text-align: center;
+}
+.carousel .carousel__pagination li {
+  display: inline-block;
+  border-radius: 4px;
+  width: 20px;
+  height: 4px;
+  background: rgba(0,0,0,.1);
+  cursor: pointer;
+}
+.carousel .carousel__pagination li.active {
+  background: rgba(0,0,0,.4);
+}
+.carousel:hover .carousel__btn {
+  display: block; /* 划过轮播图时才显示按钮 */
+}
+
+/* 中部专题分类 */
+main .category {
+  margin-top: 20px;
+  line-height: 32px;
+}
+main .category .category__label {
+  float: left;
+  margin: 0 10px 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding-right: 10px;
+  font-size: 14px;
+  overflow: hidden;
+}
+main .category .category__label img {
+  float: left;
+  width: 32px;
+  height: 32px;
+}
+main .category .category__more {
+  float: left;
+  color: #999;
+}
+
+/* 中部主要推荐文章章节预览 */
+main article {
+  margin-top: 20px;
+}
+main article section {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  position: relative;
+}
+main article section:first-child {
+  border-top: 1px solid #ddd;
+}
+article section .section__cover {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -60px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 150px;
+  height: 120px;
+  overflow: hidden;
+}
+article section .section__cover img {
+  width: 100%;
+  height: 100%;
+}
+article section .section__title,
+article section .section__content {
+  margin-right: 170px; /* 留出封面图的位置 */
+}
+article section .section__content {
+  line-height: 1.8;
+  font-size: 14px;
+  text-indent: 2em;
+  color: #666;
+}
+article section .section__info {
+  font-size: 12px;
+  color: #999;
+}
+article section .section__info .iconfont {
+  font-size: 12px;
+}
+article section .section__info > * {
+  margin-right: 10px;
+}
+main article .load-more {
+  display: block;
+  margin: 30px 0;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+  text-align: center;
+  color: #666;
+  background: #eee;
+}
+main article .load-more:hover {
+  background: #ccc;
+}

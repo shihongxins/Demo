@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01-拼多多首页-固定导航条与二维码</title>
+  <style>
+    /* 清除默认样式 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    a,a:hover,a:visited,a:active {
+      color: inherit;
+      text-decoration: none;
+    }
+    ul,ol,li {
+      list-style: none;
+    }
+
+    /* 设置 body 高度，使其可滚动 */
+    body {
+      height: 200vh;
+    }
+
+    /* 给内容区域设置外边距，防止被固定导航条遮挡内容 */
+    main {
+      margin-top: 111px;
+    }
+
+    /* 导航条容器 */
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 107px;
+      border-bottom: 4px solid #ed435b;
+      background: white;
+    }
+
+    /* 导航条 */
+    nav {
+      margin: 0 auto;
+      width: 1200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* logo */
+    nav a.logo {
+      float: left;
+      width: 15%;
+      max-width: 180px;
+      height: auto;
+      margin: 21px 0;
+    }
+    nav a.logo img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      border: none;
+    }
+    
+    /* menu */
+    nav .menu {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      left: 230px;
+      margin-top: -9px;
+      /* font-size: 0; */
+      font-size: 18px;
+      color: #6c6c6c;
+    }
+    nav .menu li {
+      float: left;
+      font-size: 18px;
+      height: 20px;
+      line-height: 20px;
+      border-left: 1px solid #6c6c6c;
+    }
+    nav .menu li.active {
+      font-weight: 500;
+      color: #fc475d;
+    }
+    nav .menu span {
+      display: inline-block;
+      margin: 0 15px;
+    }
+    nav .menu li:first-child {
+      border-left: none;
+    }
+    nav .menu li:first-child span {
+      margin-left: 0;
+    }
+
+    /* 固定二维码 */
+    aside.left-qrcode-wrapper {
+      position: fixed;
+      left: -81px;
+      bottom: 150px;
+      z-index: 5;
+      width: 162px;
+      background: #fafafa;
+      transition: left .5s;
+    }
+    aside.left-qrcode-wrapper:hover {
+      left: 0;
+    }
+    .qrcode-container {
+      margin: 8px;
+      border: 2px solid #ffedf1;
+      padding: 20px 15px 8px;
+    }
+    .qrcode-container img {
+      width: 100%;
+    }
+    .qrcode-description {
+      margin-top: 10px;
+      line-height: 20px;
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- 顶部导航条 -->
+  <header>
+    <nav>
+      <a class="logo" href="/">
+        <img src="./img/pdd_logo.png" alt="pdd_logo">
+      </a>
+      <ul class="menu">
+        <li class="active">
+          <a href="#"><span>首页</span></a>
+        </li>
+        <li>
+          <a href="#"><span>商家入驻</span></a>
+        </li>
+        <li>
+          <a href="#"><span>热点资讯</span></a>
+        </li>
+        <li>
+          <a href="#"><span>社会招聘</span></a>
+        </li>
+        <li>
+          <a href="#"><span>校园招聘</span></a>
+        </li>
+        <li>
+          <a href="#"><span>招采平台</span></a>
+        </li>
+        <li>
+          <a href="#"><span>帮助中心</span></a>
+        </li>
+        <li>
+          <a href="#"><span>举报平台</span></a>
+        </li>
+        <li>
+          <a href="#"><span>分享赚钱</span></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <p>导航栏不能遮挡正文内容</p>
+    <p>导航栏不能遮挡正文内容</p>
+    <p>导航栏不能遮挡正文内容</p>
+    <p>导航栏不能遮挡正文内容</p>
+    <p>导航栏不能遮挡正文内容</p>
+    <p>导航栏不能遮挡正文内容</p>
+    <!-- 侧边固定二维码 -->
+    <aside class="left-qrcode-wrapper">
+      <div class="qrcode-container">
+        <img src="./img/pdd_qrcode.png" alt="pdd_qrcode">
+        <div class="qrcode-description">
+          <p>微信扫码下载</p>
+          <p>App专享优惠</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

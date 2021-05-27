@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>京东产品图片预览放大镜</title>
+  <style>
+    .product-introduce {
+      position: relative;
+      margin: 100px auto;
+      width: 1000px;
+    }
+    .product-introduce .product-preview {
+      width: 350px;
+      border: 1px solid #eee;
+      cursor: move;
+    }
+    .product-introduce .product-preview img {
+      display: block;
+      border: none;
+      width: 100%;
+    }
+    .product-introduce .zoom-area {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      display: none;
+      width: 200px;
+      height: 200px;
+      background: #fede4f;
+      opacity: .5;
+      cursor: move;
+    }
+    .product-introduce .zoom-detail {
+      position: absolute;
+      top: 0;
+      left: 350px;
+      display: none;
+      margin-left: 5px;
+      border: 1px solid #eee;
+      width: 540px;
+      height: 540px;
+      overflow: hidden;
+    }
+    .product-introduce .zoom-detail img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-introduce">
+    <div class="product-preview">
+      <img src="./img/a9178d87175645ad.jpg" alt="">
+      <div class="zoom-area"></div>
+    </div>
+    <div class="zoom-detail">
+      <img src="./img/a9178d87175645ad_big.jpg" alt="">
+    </div>
+  </div>
+  <script>
+    document.querySelector('.product-preview').addEventListener('mousemove',function(e){
+      var zoomArea = this.querySelector('.zoom-area');
+      var zoomDetail = this.parentNode.querySelector('.zoom-detail');
+      var previewImg = this.querySelector('img');
+      var detailImg = zoomDetail.querySelector('img');
+      zoomDetail.style.display = 'block';
+      zoomArea.style.display = 'block';
+      // 区域选择块的大小位置调整（动态计算区域选择块的大小）
+      var zaH = zoomDetail.clientHeight/detailImg.height*previewImg.height;
+      var zaW = zoomDetail.clientWidth/detailImg.width*previewImg.width;
+      // 计算选择块位置
+      /*
+      即指针在缩略图中的位置 - 选择块的宽、高的一半 = 选择块左上角的位置
+      本来 e.layerY/layerX = e.pageY/pageX - 父容器左上角的位置，
+      但计算 layer 时总出现波动，不知道原因，故还是使用 pageY/pageX 定位
+      var zaTop = e.layerY - zaH / 2;
+      var zaLeft = e.layerX - zaW / 2;
+      */
+      var eX = e.pageX,
+          eY = e.pageY;
+      var zaTop = eY - this.parentNode.offsetTop - zaH/2;
+      var zaLeft = eX - this.parentNode.offsetLeft - zaW/2;
+      // 设置位置范围
+      zaTop = Math.max(0,Math.min(this.offsetHeight-zaH,zaTop));
+      zaLeft = Math.max(0,Math.min(this.offsetWidth-zaW,zaLeft));
+      zoomArea.style.height = zaH + 'px';
+      zoomArea.style.width = zaW + 'px';
+      zoomArea.style.top = zaTop + 'px';
+      zoomArea.style.left = zaLeft + 'px';
+
+      // 放大图的位置调整
+      detailImg.style.top = -zaTop/this.offsetHeight*detailImg.offsetHeight + 'px';
+      detailImg.style.left = -zaLeft/this.offsetWidth*detailImg.offsetWidth + 'px';
+    });
+    //离开时隐藏
+    document.querySelector('.product-preview').addEventListener('mouseleave',function(){
+      this.parentNode.querySelector('.zoom-detail').style.display = 'none';
+      this.querySelector('.zoom-area').style.display = 'none';
+    });
+  </script>
+</body>
+</html>

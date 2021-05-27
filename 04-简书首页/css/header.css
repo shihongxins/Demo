@@ -1,0 +1,185 @@
+/* ================ 顶部样式 header.css =============== */
+/* ====== header 中的公共样式 ====== */
+header .iconfont {
+  font-size: 20px;
+  vertical-align: middle;
+}
+/* 菜单与子菜单 */
+header .nav__item {
+  position: relative; /* 给子菜单或徽章作定位参考 */
+}
+header .nav__item__child {
+  display: none; /* 子菜单默认隐藏 */
+  position: absolute;
+  top: 57px;
+  left: 0;
+  z-index: 1;
+  width: 160px;
+  background: #fff;
+  box-shadow: 0 2px 4px 2px rgba(0,0,0,.1);
+}
+/* 导航栏中的按钮 */
+header a.nav__btn {
+  display: block;
+  padding: 0 1em;
+  height: 56px;
+}
+header a.nav__btn:hover {
+  background: var(--color_hover);
+}
+header .nav__item__child .iconfont {
+  margin-right: 10px; /* 二级菜单中的 iconfont 得与内容有一定边距 */
+  color: var(--color_main);
+}
+header .nav__item:hover .nav__item__child {
+  display: block; /* 划过菜单时才显示子菜单 */
+}
+/* ====== header 中各部分的具体样式 ====== */
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  box-sizing: content-box;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  height: 56px;
+  line-height: 56px;
+  vertical-align: middle;
+  background: #fff;
+}
+/* 左边 logo 图 */
+header .logo {
+  float: left;
+  height: 56px;
+}
+header .logo .logo__img {
+  height: 56px;
+}
+/* 右边“写文章” 按钮 */
+header .btn--write {
+  float: right;
+  margin: 8px;
+  border-radius: 20px;
+  padding: 8px;
+  width: 100px;
+  height: 40px;
+  line-height: 24px;
+  text-align: center;
+  color: #fff;
+  background: var(--color_main)
+}
+/* 右边用户功能区 */
+header .user {
+  float: right;
+}
+header .user .user__avatar {
+  margin: 8px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  overflow: hidden;
+}
+/* 右边 站点 样式设置功能 */
+header .style__mode {
+  float: right;
+  padding: 0 20px;
+  height: 56px;
+  line-height: 56px;
+  text-decoration: none;
+}
+header .style__mode .iconfont {
+  font-size: 30px;
+}
+/* 中部的 一级导航菜单 和 搜索框 */
+header nav {
+  background: #fff;
+}
+header nav > .nav__item {
+  float: left;
+  margin-right: 10px;
+}
+header nav > .nav__item.active {
+  color: var(--color_main);
+}
+header nav > .nav__item > span.badge {
+  /* 重新调整一级菜单的徽章位置 */
+  top: .5em;
+  left: calc(100% - 1.5em);
+  right: auto;
+  margin-top: 0;
+}
+header nav .search {
+  margin-left: 20px;
+  position: relative; /* 给搜索框图标定位 */
+}
+nav .search .icon-search {
+  position: absolute;
+  top: 50%;
+  right: .5em;
+  margin-top: -15px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #999;
+}
+nav .search .search__input {
+  border: none;
+  border-radius: 18px;
+  background: #eee;
+  padding: 0 3em 0 1em;
+  width: 180px;
+  height: 36px;
+  transition: width .5s;
+}
+nav .search .search__recommend {
+  display: none; /* 默认隐藏 */
+  position: absolute;
+  top: 57px;
+  left: 0;
+  border-radius: 4px;
+  padding: 20px;
+  width: 300px;
+  background: #fff;
+  box-shadow: 0 2px 4px 2px rgba(0,0,0,.1);
+}
+nav .search .search__recommend.triangle--width:after {
+  top: -8px;
+  left: 4em;
+  width: 16px;
+  height:16px;
+}
+nav .search__recommend .search__recommend__items {
+  margin-top: 10px;
+  line-height: 1;
+  font-size: 14px;
+}
+nav .search__recommend .search__recommend__label {
+  float: left;
+  margin: 0 10px 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 6px;
+  white-space: nowrap;
+  color: #777;
+  text-decoration: none;
+}
+nav .search__recommend .search__recommend__label:hover {
+  border-color: #999;
+}
+/* 搜索框聚焦时的变化 */
+nav .search .search__input:focus {
+  width: 240px;
+}
+nav .search .search__input:focus ~ .icon-search {
+  background: #999;
+  color: #fff;
+}
+nav .search .search__input:focus ~ .search__recommend {
+  display: block;
+}

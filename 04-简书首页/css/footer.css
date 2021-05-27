@@ -1,0 +1,60 @@
+/* =================== 侧边工具栏 回到顶部 backtop ======================== */
+.side__tool {
+  position: fixed;
+  right: 60px;
+  bottom: 60px;
+  background: #fff;
+}
+.side__tool .backtop__container {
+  position: relative;
+}
+.side__tool .backtop__container .backtop__wrapper {
+  display: block;
+  border: 1px solid #ddd;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  transform: rotate(180deg)
+}
+.side__tool .backtop__container .iconfont {
+  font-size: 40px;
+}
+.side__tool .backtop__container .tips {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 6px);
+  margin-top: -8px;
+  border-radius: 4px;
+  padding: 3px 4px;
+  line-height: 1;
+  font-size: 13px;
+  white-space: nowrap;
+  color: #fff;
+  background: #000;
+}
+.side__tool .backtop__container .tips.triangle--border:after {
+  top: 50%;
+  right: -10px;
+  bottom: auto;
+  left: auto;
+  margin-top: -5px;
+  border-color: transparent;
+  border-left-color: #000;
+}
+.side__tool .backtop__container:hover .tips {
+  display: block;
+}
+/* =========================== 底部 footer.css ========================== */
+footer {
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: #999;
+}
+footer a:hover {
+  color: #333;
+}
