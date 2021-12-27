@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>华为新闻</title>
+    <style>
+      /* 清除浮动 */
+      .clearfix {
+        overflow: auto;
+        zoom: 1;
+      }
+      .clearfix::after {
+        content: "";
+        display: block;
+        float: none;
+        clear: both;
+      }
+      /* 布局容器 */
+      .news-container {
+        margin: 20px auto;
+        padding: 0;
+        width: 1200px;
+      }
+      /* 盒子容器 */
+      .news-container .news-wrapper {
+        list-style: none;
+        float: left;
+        margin-right: 20px;
+        height: 247px;
+        width: 30%;
+        position: relative;
+        overflow: hidden;
+      }
+      /* 图片容器 */
+      .news-container .news-wrapper .cover-wrapper {
+        width: 100%;
+        height: 100%;
+        background-color: #333;
+      }
+      /* 图片 */
+      .news-container .news-wrapper .cover-wrapper .cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s;
+      }
+      /* 描述 */
+      .news-container .news-wrapper .discription {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        box-sizing: border-box;
+        padding: 25px 30px;
+        height: 100%;
+        width: 100%;
+        transition: all 0.3s;
+      }
+      .news-container .news-wrapper .discription > *{
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        font-weight: normal;
+        color: #fff;
+      }
+      .news-container .news-wrapper .discription .title {
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .news-container .news-wrapper .discription .subtitle {
+        color: #ddd;
+        margin-bottom: 20px;
+      }
+      .news-container .news-wrapper .discription .icon {
+        font-style: normal;
+        color: orangered;
+      }
+      /* 阴影 */
+      .news-container .news-wrapper a::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      /* 滑动效果 */
+      .news-container .news-wrapper:hover .cover-wrapper .cover {
+        transform: scale(1.5);
+      }
+      .news-container .news-wrapper:hover a::after {
+        opacity: 1;
+      }
+      .news-container .news-wrapper:hover .discription {
+        transform: translateY(-50%);
+        /* top: 0; */
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="news-container clearfix">
+      <li class="news-wrapper">
+        <a href="">
+          <div class="cover-wrapper">
+            <img class="cover" src="https://fakeimg.pl/800x600/e96" alt="1">
+          </div>
+          <div class="discription">
+            <h5 class="category">前沿探索</h5>
+            <h4 class="title">憧憬6G，共同定义6G</h4>
+            <h5 class="subtitle">《6G无线通信新征程》序言</h5>
+            <span class="detail">了解更多 <i class="icon">&#10095;</i></span>
+          </div>
+        </a>
+      </li>
+      <li class="news-wrapper">
+        <a href="">
+          <div class="cover-wrapper">
+            <img class="cover" src="https://fakeimg.pl/800x600/e96" alt="2">
+          </div>
+          <div class="discription">
+            <h5 class="category">成功故事</h5>
+            <h4 class="title">以“青海湖”之名，再造青海</h4>
+            <h5 class="subtitle">看全球最大可再生能源基地如何给出答案</h5>
+            <span class="detail">了解更多 <i class="icon">&#10095;</i></span>
+          </div>
+        </a>
+      </li>
+      <li class="news-wrapper">
+        <a href="">
+          <div class="cover-wrapper">
+            <img class="cover" src="https://fakeimg.pl/800x600/e96" alt="3">
+          </div>
+          <div class="discription">
+            <h5 class="category">全球产业展望</h5>
+            <h4 class="title">华为发布《智能世界2030》报告</h4>
+            <h5 class="subtitle">无界探索，翻开未来</h5>
+            <span class="detail">了解更多 <i class="icon">&#10095;</i></span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </body>
+</html>
