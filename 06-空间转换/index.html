@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>空间转换</title>
+    <!-- 空间立方体动画 -->
+    <style>
+      @keyframes cube_rotate3d {
+        from {
+          transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        }
+        to {
+          transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        }
+      }
+      .cube {
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: 5s linear 0s infinite normal none cube_rotate3d;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      .cube .side {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cube .side.front {
+        background-color: red;
+        transform: translateZ(100px);
+      }
+      .cube .side.back {
+        background-color: orange;
+        transform: rotateY(180deg) translateZ(100px);
+      }
+      .cube .side.left {
+        background-color: yellow;
+        transform: rotateY(-90deg) translateZ(100px);
+      }
+      .cube .side.right {
+        background-color: green;
+        transform: rotateY(90deg) translateZ(100px);
+      }
+      .cube .side.top {
+        background-color: blue;
+        transform: rotateX(90deg) translateZ(100px);
+      }
+      .cube .side.bottom {
+        background-color: purple;
+        transform: rotateX(-90deg) translateZ(100px);
+      }
+    </style>
+    <!-- 3D 导航 -->
+    <style>
+      nav {
+        width: 300px;
+        margin: 100px auto;
+      }
+      nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      nav ul::after {
+        content: "";
+        display: block;
+        float: none;
+        clear: both;
+      }
+      nav ul li {
+        float: left;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        transform-style: preserve-3d;
+        position: relative;
+        transition: transform 0.5s;
+        /* transform: rotateX(30deg) rotateY(30deg); */
+      }
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        position: absolute;
+      }
+      nav ul li a:first-child {
+        background-color: lightblue;
+        transform: translateZ(20px);
+      }
+      nav ul li a:last-child {
+        background-color: lightpink;
+        transform: rotateX(90deg) translateZ(20px);
+      }
+      nav ul li:hover {
+        transform: rotateX(-90deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cube">
+      <div class="side front">1</div>
+      <div class="side back">2</div>
+      <div class="side left">3</div>
+      <div class="side right">4</div>
+      <div class="side top">5</div>
+      <div class="side bottom">6</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="">首页</a><a href="">HOME</a></li>
+        <li><a href="">登录</a><a href="">LOGIN</a></li>
+        <li><a href="">注册</a><a href="">REGISTER</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
