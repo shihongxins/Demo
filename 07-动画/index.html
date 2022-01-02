@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>逐帧动画</title>
+    <style>
+      .animation-view {
+        /* border: 1px solid #ccc; */
+        width: 178px;
+        height: 178px;
+        background-image: url("./images/steps_animation.png");
+        background-repeat: no-repeat;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+        /* 2.逐帧动画关键函数 steps */
+        /* 3.多组动画，用 `,` 号隔开 */
+        animation: swim 1.5s steps(10) infinite alternate, move 6s linear infinite;
+      }
+      .animation-view:hover {
+        animation-play-state: paused;
+      }
+      @keyframes swim {
+        /* 1.逐帧动画原理：背景图位置的替换 */
+        from {
+          background-position: 0 0;
+        }
+        to {
+          background-position: 0 -1865px;
+        }
+      }
+      @keyframes move {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(calc(100vw - 110%));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="animation-view"></div>
+  </body>
+</html>
