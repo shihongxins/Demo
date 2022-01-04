@@ -1,0 +1,212 @@
+/* 公共样式 */
+:root {
+  --color-font-danger: #cf4444;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  vertical-align: middle;
+}
+.pannel {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* 主体内容 */
+.main {
+  /* 80px 防止底部内容被覆盖 */
+  padding: 12px 11px 80px;
+}
+/* 用户信息 */
+.user-info {
+  padding: 15px 0 15px 11px;
+  display: flex;
+  align-items: center;
+}
+.user-info .btn-location {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  background-image: linear-gradient(#6fc2aa 5%, #54b196 100%);
+}
+.user-info .user-info-content {
+  flex: 1;
+  overflow: hidden;
+  margin-left: 20px;
+  font-size: 12px;
+  color: #333;
+}
+.user-info .user-info-content .contact {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user-info .user-info-content .contact strong {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.user-info .user-info-content .address {
+  margin: 10px 0 0;
+  padding: 0;
+  line-height: 18px;
+}
+.user-info .btn-more {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  color: #808080;
+}
+/* 商品信息 */
+.goods {
+  padding: 11px 0 11px 11px;
+  display: flex;
+}
+.goods .iconfont {
+  font-size: 12px;
+}
+.goods p {
+  margin: 0;
+  padding: 0;
+}
+.goods .goods-cover-wrapper {
+  width: 85px;
+  height: 85px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.goods .goods-detail {
+  flex: 1;
+  overflow: hidden;
+  margin-left: 10px;
+}
+.goods .goods-detail .goods-name {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: normal;
+  color: #262626;
+}
+.goods .goods-detail .tags {
+  margin: 5px 0;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.goods .goods-detail .tags .tag {
+  margin-right: 5px;
+  border-radius: 2px;
+  padding: 2px 10px;
+  line-height: 16px;
+  font-size: 12px;
+  color: #888;
+  background-color: #f7f7f7;
+}
+.goods .goods-detail .price .discount {
+  font-size: 16px;
+  color: var(--color-font-danger);
+}
+.goods .goods-detail .price .origin {
+  margin-left: 5px;
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+.goods .goods-count .btn-count {
+  display: block;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+}
+/* 其他信息 */
+.other {
+  padding: 15px;
+}
+.other div {
+  margin-bottom: 30px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+.other div:last-child {
+  margin-bottom: 0;
+}
+.other div .iconfont {
+  font-size: 12px;
+}
+.other div > * {
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+  font-size: 13px;
+  font-weight: normal;
+  color: #262626;
+}
+.other div .comment {
+  flex: 1;
+  margin-left: 20px;
+  font-size: 12px;
+  color: #989898;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.other div .discount {
+  color: var(--color-font-danger);
+}
+
+/* 底部支付 */
+.pay {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #ededed;
+  padding: 0 11px;
+  height: 80px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 价格 */
+.pay .price {
+  font-size: 12px;
+  vertical-align: bottom;
+}
+.pay .price strong {
+  font-size: 20px;
+  color: var(--color-font-danger);
+}
+.pay .price strong .iconfont {
+  margin: 0 5px;
+  font-size: 12px;
+}
+/* 支付按钮 */
+.pay .btn-pay {
+  border-radius: 3px;
+  width: 90px;
+  height: 35px;
+  line-height: 35px;
+  background-image: linear-gradient(#6fc2aa 5%, #54b196 100%);
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}

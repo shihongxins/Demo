@@ -1,0 +1,37 @@
+{
+  "id": "3115916",
+  "name": "小兔鲜",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "21999835",
+      "name": "yen",
+      "font_class": "yen",
+      "unicode": "e71a",
+      "unicode_decimal": 59162
+    },
+    {
+      "icon_id": "474963",
+      "name": "location",
+      "font_class": "location",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "1996911",
+      "name": "close",
+      "font_class": "close",
+      "unicode": "e6e1",
+      "unicode_decimal": 59105
+    },
+    {
+      "icon_id": "21712494",
+      "name": "arrow",
+      "font_class": "arrow",
+      "unicode": "e695",
+      "unicode_decimal": 59029
+    }
+  ]
+}

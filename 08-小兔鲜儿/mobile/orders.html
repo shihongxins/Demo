@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>填写订单</title>
+    <link rel="stylesheet" href="./lib/normalize.css" />
+    <link rel="stylesheet" href="./lib/iconfont/iconfont.css" />
+    <link rel="stylesheet" href="./styles/orders.css" />
+  </head>
+  <body>
+    <!-- 主体内容 -->
+    <div class="main">
+      <!-- 用户信息 -->
+      <div class="pannel user-info">
+        <a href="" class="btn-location"
+          ><i class="iconfont icon-location"></i
+        ></a>
+        <div class="user-info-content">
+          <div class="contact">
+            <strong>石洪鑫</strong>
+            <a href="tel:+86 18523822324">18523822324</a>
+          </div>
+          <p class="address">重庆市 渝北区 XXX街道 XX小区 X栋 6-6 #</p>
+        </div>
+        <a href="" class="btn-more"><i class="iconfont icon-arrow"></i></a>
+      </div>
+      <!-- 商品信息 -->
+      <div class="pannel goods">
+        <a class="goods-cover-wrapper">
+          <img src="./uploads/goods-1.jpg" alt="goods-1" class="goods-cover" />
+        </a>
+        <div class="goods-detail">
+          <h6 class="goods-name">
+            OPPO Reno6 Pro+ 12+256GB 夏日晴海 5000万四摄 索尼IMX766 骁龙870
+            旗舰拍照 5G手机
+          </h6>
+          <p class="tags">
+            <a href="" class="tag">OPPO</a><a href="" class="tag">Reno6</a>
+          </p>
+          <p class="price">
+            <span class="discount">
+              <i class="iconfont icon-yen"></i>3666
+            </span>
+            <span class="origin"> <i class="iconfont icon-yen"></i>3999 </span>
+          </p>
+        </div>
+        <div class="goods-count">
+          <a href="" class="btn-count">
+            <i class="iconfont icon-close"></i>
+            <span class="count">1</span>
+          </a>
+        </div>
+      </div>
+      <!-- 其他信息-运送方式 -->
+      <section class="pannel other">
+        <div>
+          <h6>配送方式</h6>
+          <p>顺丰快递</p>
+        </div>
+        <div>
+          <h6>买家备注</h6>
+          <p class="comment">希望可以尽快发货，谢谢~</p>
+        </div>
+        <div>
+          <h6>支付方式</h6>
+          <p>
+            <span>支付宝</span>
+            <i class="iconfont icon-arrow"></i>
+          </p>
+        </div>
+      </section>
+      <!-- 其他信息-结算价格 -->
+      <section class="pannel other">
+        <div>
+          <h6>商品总价</h6>
+          <p><i class="iconfont icon-yen"></i><span>3999.00</span></p>
+        </div>
+        <div>
+          <h6>运费</h6>
+          <p><i class="iconfont icon-yen"></i><span>0.00</span></p>
+        </div>
+        <div>
+          <h6>折扣</h6>
+          <p class="discount">
+            - <i class="iconfont icon-yen"></i><span>333.00</span>
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!-- 底部支付 -->
+    <div class="pay">
+      <span class="price">
+        合计:
+        <strong>
+          <i class="iconfont icon-yen"></i>
+          <span>3666.00</span>
+        </strong>
+      </span>
+      <a href="" class="btn-pay">去支付</a>
+    </div>
+  </body>
+</html>
