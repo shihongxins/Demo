@@ -1,0 +1,270 @@
+.xtx_body {
+    padding: 30px 0 85px;
+    background-color: #f6f6f6;
+}
+
+.xtx_body .wrapper {
+    display: flex;
+}
+
+/* ***************************************侧边栏************************************************ */
+.xtx_body .wrapper .aside {
+    margin-right: 18px;
+    width: 227px;
+    min-height: 500px;
+    background-color: #fff;
+}
+/* 用户信息 */
+.xtx_body .aside .user {
+    height: 230px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.xtx_body .aside .user .avatar {
+    width: 85px;
+    height: 85px;
+}
+.xtx_body .aside .user .name {
+    margin: 5px 0;
+    font-weight: normal;
+    font-size: 18px;
+}
+.xtx_body .aside .user .grade {
+    border-radius: 13px;
+    width: 93px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    color: #f9f9f9;
+    background-image:
+        linear-gradient(264deg, #e05e2f 0%, #ea745e 95%);
+}
+.xtx_body .aside .user .grade img {
+    width: 15px;
+    vertical-align: middle;
+}
+/* 菜单分类，菜单项 */
+.xtx_body .aside .menu_category {
+    border-top: 1px solid #f4f4f4;
+    padding: 25px 0 25px 50px;
+}
+.xtx_body .aside .menu_category .menu_title {
+    font-size: 18px;
+    font-weight: normal;
+}
+.xtx_body .aside .menu_category .menu_item {
+    margin-top: 20px;
+    line-height: 18px;
+    font-size: 14px;
+    color: #666;
+}
+.xtx_body .aside .menu_category .menu_item a {
+    color: inherit;
+}
+.xtx_body .aside .menu_category .menu_item.active {
+    list-style: disc;
+    color: #5cb99e;
+}
+
+/* **************************************内容主体************************************************* */
+.xtx_body .wrapper .main {
+    flex: 1;
+}
+
+/* 公共样式 */
+.xtx_body .pannel {
+    margin-bottom: 20px;
+    padding: 28px 18px;
+    background-color: #fff;
+}
+.xtx_body .pannel:last-child {
+    margin-bottom: 0;
+}
+.xtx_body .pannel .pannel_title {
+    border-bottom: 1px solid #f4f4f4;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.xtx_body .pannel .pannel_title h4 {
+    font-size: 22px;
+    font-weight: normal;
+    color: #333;
+}
+.xtx_body .pannel .pannel_title .more {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #999;
+}
+.xtx_body .pannel .pannel_content {
+    height: 260px;
+}
+
+/* 账户概览 */
+.xtx_body .main .user-account {
+    margin-bottom: 18px;
+    padding: 20px 0;
+    height: 132px;
+    background-color: #fff;
+    display: flex;
+}
+.xtx_body .user-account > div {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+.xtx_body .user-account .user-info {
+    border-right: 1px solid #f4f4f4;
+}
+.xtx_body .user-account .user-account-item img {
+    width: 25px;
+    margin-bottom: 10px;
+}
+.xtx_body .user-account .user-account-item:last-child img {
+    width: 18px;
+}
+.xtx_body .user-account .user-account-item span {
+    font-size: 25px;
+    color: #e05e30;
+}
+.xtx_body .user-account .user-account-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* 订单 */
+.xtx_body .orders .pannel_title {
+    border: none;
+}
+.xtx_body .orders .pannel_content {
+    height: auto;
+}
+.xtx_body .orders .order_item {
+    margin-bottom: 20px;
+    border: 1px solid #f4f4f4;
+    height: 137px;
+    display: flex;
+    overflow: hidden;
+}
+.xtx_body .orders .order_item:last-child {
+    margin-bottom: 0;
+}
+.xtx_body .orders .order_item > * {
+    flex: 1;
+    overflow: hidden;
+}
+/* 商品 */
+.xtx_body .orders .order_item .goods {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.xtx_body .order_item .goods img {
+    margin: 14px 12px;
+    width: 107px;
+    height: 107px;
+    object-fit: contain;
+}
+.xtx_body .order_item .goods > div {
+    width: 100%;
+    overflow: hidden;
+}
+.xtx_body .order_item .goods h5 {
+    margin-bottom: 10px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-weight: normal;
+}
+.xtx_body .order_item .goods p {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px;
+    color: #999;
+}
+.xtx_body .order_item .goods p span {
+    margin-right: 10px;
+}
+/* 状态、支付、操作 */
+.xtx_body .order_item .status,
+.xtx_body .order_item .payment,
+.xtx_body .order_item .actions {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* 订单状态 */
+.xtx_body .order_item .status .order_status {
+    color: #e05e30;
+}
+/* 支付 */
+.xtx_body .order_item .payment {
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+}
+.xtx_body .order_item .payment .goods-price {
+    color: #9a2e1f;
+}
+/* 操作 */
+.xtx_body .order_item .actions a {
+    margin-bottom: 5px;
+}
+.xtx_body .order_item .actions a:last-child {
+    margin-bottom: 0;
+}
+.xtx_body .order_item .actions .btn {
+	border-radius: 2px;
+    width: 100px;
+	height: 30px;
+    line-height: 30px;
+    color: #fff;
+	background-color: #5eb69c;
+}
+
+/* 收藏、足迹 的商品列表 */
+.xtx_body .pannel_content .goods_list {
+    display: flex;
+    overflow: hidden;
+    justify-content: space-around;
+}
+.xtx_body .pannel_content .goods_item {
+    width: 180px;
+    overflow: hidden;
+}
+.xtx_body .pannel_content .goods_item .goods {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.xtx_body .pannel_content .goods_item .goods .goods_img_cover {
+    text-align: center;
+}
+.xtx_body .pannel_content .goods_item .goods img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+}
+.xtx_body .pannel_content .goods_item .goods h5 {
+    font-size: 16px;
+    font-weight: normal;
+    word-break: keep-all;
+}
+.xtx_body .pannel_content .goods_item .goods .price {
+    font-size: 22px;
+    font-weight: normal;
+    color: #9a2e1f;
+}
