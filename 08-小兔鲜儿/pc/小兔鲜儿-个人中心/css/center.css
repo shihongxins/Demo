@@ -173,12 +173,10 @@
     object-fit: contain;
 }
 .xtx_body .order_item .goods > div {
-    width: 100%;
     overflow: hidden;
 }
 .xtx_body .order_item .goods h5 {
     margin-bottom: 10px;
-    width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
